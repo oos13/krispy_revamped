@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    
+    <!-- w3 school -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- matretialize -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+<!--     boostrap -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+
+    <title>Krispy King</title>
+
+    
+   
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{url_for('home')}}">Krispy King</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href=" {{url_for('login')}}">Customer</a>
+          <a class="dropdown-item" href=" {{url_for('employee')}}">Employee</a>
+          
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Register
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href=" {{url_for('register')}}">Customer</a>
+          
+          
+        </div>
+      </li>
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+
+    <i class="fa fa-shopping-cart" style="font-size:48px;color:BLACK"></i>
+  </div>
+</nav>
+    
+
+
+
+
+<div>
+  <div class="row">
+    
+<!--       The Ultimate Burger -->
+    <div class="col m4">
+      
+      
+    <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://www.spicejin.com/wp-content/uploads/2021/11/King-Burger-shawarma-point.jpg"  style="width: 100%; height: 300px">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">The Ultimate Burger <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">The Ultimate Burger<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+     <!-- <center> <a href="cart.html" <input type="submit" value="Add to cart" class="btn"> </a></center> -->
+
+     <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+     
+
+
+     <!-- <a class="btn btn-primary" href="#" role="button">Link</a> -->
+
+
+    </div>
+    
+  </div>
+</div>
+          
+    </div>
+    
+    
+<!--       Hot Wings -->
+    <div class="col m4">
+    
+    
+      <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://www.simplyrecipes.com/thmb/QcqsTCmM3wIbO2dfcPjwsyw73u4=/2000x1333/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2013__01__Buffalo-Wings-LEAD-1-f40d69f4733c4d0cb3bab112549fcbc0.jpg">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Hot wings <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Hot Wings<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+      <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+        
+    </div>
+        </div>
+      </div>
+    
+    </div>
+    
+<!--       Soft Drinks -->
+    <div class="col m4">
+    
+      <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2F2016%2F12%2Fmain%2Fcinnamon-spice-soda.jpg%3Fitok%3D8Q_Qu8tO" style="width: 100%; height: 300px">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Soft Drinks <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Soft Drinks<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+      <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+        
+    </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+    
+<!--       second row -->
+   <div class="row">
+     
+     
+<!--        fried shrimps -->
+    <div class="col m4">
+     
+      <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://www.thespruceeats.com/thmb/LIANncp_c6sunRH3TtekncKhj10=/3781x2836/smart/filters:no_upscale()/ebi-fry-fried-shrimp-2031450-hero-01-46c436a89c164a9ab5980f888097fcd2.jpg" style="width: 100%; height: 300px">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Fried Shrimps <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Fried Shrimps<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+      <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+        
+    </div>
+        </div>
+      </div>
+     
+     </div>
+     
+     
+<!--        mozellera stick -->
+    <div class="col m4">
+     
+     <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://skinnyms.com/wp-content/uploads/2021/03/Air-Fryer-Mozzarella-Sticks-Snack-Recipe-6-1200x799.jpg" style="width: 100%; height: 300px">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Mozzarella<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Mozzarella<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+      <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+        
+    </div>
+        </div>
+      </div>
+     
+     </div>
+     
+<!--        fries -->
+    <div class="col m4">
+     
+     <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2021-08-Truffle-Fries%2FKitchnKitchn3580-1_01" style="width: 100%; height: 300px">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Fries <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> </span>
+    
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Fries<i class="material-icons right">close</i></span>
+    <p>450-500 calories</p>
+    <p>$7-$8.50</p>
+    <br>
+    
+<select class="browser-default">
+  <option value="" disabled selected>Choose your protein</option>
+  <option value="1">Beef</option>
+  <option value="2">Chicken</option>
+  <option value="3">Fish</option>
+</select>
+   
+    <p>
+      customize
+    </p>
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in " checked="checked" />
+      <span>Pickles</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Cheese</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Mayo</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Lettuce</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Bacon</span>
+    </label>
+  </p>
+    
+    <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" />
+      <span>Tomatoes</span>
+    </label>
+  </p>
+    
+    <div class = "checkouttt">
+      <center><a class="btn btn-primary" href=" {{url_for('cart')}}" role="button"> Add to cart</a></center>
+        
+    </div>
+        </div>
+      </div>
+     
+     </div>
+  </div>
+     </div> 
+    
+
+
+
+    
+    
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- These divs will need classes so that they work as described -->
+          <div class="col m3">
+            <a href="#!" class="brand-logo"
+              ><i class="material-icons" style="font-size: 50px">restaurant_menu </i
+              >Krispy king</a
+            >
+          </div>
+          <div class="col m3">
+            Communities content
+            <ul style="list-style-type: none">
+              <li>About</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+          <div class="col m3">
+            Useful links content
+            <ul style="list-style-type: none">
+              <li>Career</li>
+              <li>Help</li>
+            </ul>
+          </div>
+          <div class="col m3">
+            Connect with us
+            <ul style="list-style-type: none">
+              <a href="https://www.facebook.com/">
+                <i style="font-size: 24px" class="fa">&#xf082;</i>
+              </a>
+              <a href="https://www.linkedin.com/feed/"
+                ><i style="font-size: 24px" class="fa">&#xf08c;</i>
+              </a>
+              <a href="https://twitter.com/"
+                ><i style="font-size: 24px" class="fa">&#xf081;</i>
+              </a>
+              <a href="https://www.instagram.com/?hl=en"
+                ><i style="font-size: 24px" class="fa">&#xf16d;</i>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div> 
+    </footer>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
