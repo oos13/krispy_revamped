@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_index.html" %}
 
 {% block content %}
 <div class="column is-4 is-offset-4">
@@ -36,8 +36,28 @@
                 </div>
             </div>
 
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="address" name="address" placeholder="Address">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="cc_info" name="cc_info" placeholder="Credit Card">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="deposit" name="deposit" placeholder="Deposit">
+                </div>
+            </div>
+
             <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
         </form>
     </div>
 </div>
 {% endblock %}
+signup.html
+2 KB
