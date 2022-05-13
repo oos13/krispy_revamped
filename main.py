@@ -10,3 +10,12 @@ def index():
 @main.route('/profile')
 def profile():
     return render_template('profile.html')
+
+@main.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+
+@main.route('/claim')
+def claim():
+    return render_template('claim.html')

@@ -51,7 +51,7 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
     # create a new user with the form data. Hash the password so the plaintext version isn't saved.
-    new_user = il=emaUser(email, name=name, address=address, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, name=name, address=address, password=generate_password_hash(password, method='sha256'))
     ###new_account = Account(...)
 
     # add the new user to the database
@@ -64,3 +64,6 @@ def signup_post():
 @auth.route('/logout')
 def logout():
     return 'Logout'
+
+
+
