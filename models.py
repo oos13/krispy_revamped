@@ -63,6 +63,7 @@ class Order(db.Model):
 
 class Deliveries(db.Model):
     delivery_no = db.Column(db.Integer, primary_key=True, nullable=False)
+    order_id = db.Column(db.Integer, db.ForeignKey(Order.order_id), unique=True)
     delivery_person = db.Column(db.Integer, db.ForeignKey(Employee.emp_id), nullable=True )
     delivery_rating = db.Column(db.Integer, default=3)
     bid = db.Column(db.Integer)
