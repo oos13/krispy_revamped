@@ -22,6 +22,12 @@
     
     <body>
 
+
+
+
+
+        
+
         <section class="hero is-fullheight">
 
             <div class="hero-head">
@@ -32,18 +38,15 @@
 
 
 
-                                <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                <a href="{{ url_for('main.index') }}" class="navbar-item ">
                                     Home
                                 </a>
-                                <a href=" " class="navbar-item ">
-                                    Profile 
-                                </a>
-                               
+                                
                                 <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                     Logout
                                 </a>
-                                <a href="{{ url_for('main.cart') }}" class="navbar-item">
-                                    Checkout
+                                <a href="{{ url_for('main.cart') }}" class="navbar-item"><i class="material-icons">shopping_cart</i>
+                                    
                                 </a>
                             </div>
                         </div>
@@ -72,10 +75,12 @@
                         </div></li>
                         <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
                          
-                        <li><a href="#!">account balance</a></li>
+                        <li><a >Account balance:    $50 </a> </li>
+                        <li><a href="{{ url_for('main.update') }}">Update Profile</a></li>
 
+                        <li><div class="divider"></div></li>
 
-                        <li><a class="black-text subheader">top 3</a></li>
+                        <li><a class="black-text subheader">Top 3 Dishes</a></li>
                         <li><a class="subheader">Cheeseburger</a></li>
                         <li><a class="subheader">Mac & Cheese</a></li>
                         <li><a class="subheader">Chili</a></li>
@@ -83,9 +88,18 @@
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="{{ url_for('main.claim') }}">Submit a claim</a></li>
                       </ul>
-                      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
-                       
-                   
+
+
+
+
+                    <center>
+                      <h1>Welcome User!</h1>
+                      <br>
+
+                      <h6><a href="#" data-target="slide-out" class="sidenav-trigger blue-text">View Your Profile</a> </h6>
+                      
+                      
+                    </center>   
 
                 </div>
             </div>

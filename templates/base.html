@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Krispy King</title>
-    <link rel="shortcut icon" href="{{url_for('static', filename = 'favicon.png' )}}">
+    <!-- <link rel="icon" type="image/x-icon" href="/static/favicon.png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
 <!-- materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -43,8 +43,7 @@
                             <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                 Logout
                             </a>
-                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
-                                Checkout
+                            <a href="{{ url_for('main.cart') }}" class="navbar-item"><i class="material-icons">shopping_cart</i>     
                             </a>
                         </div>
                     </div>

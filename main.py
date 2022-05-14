@@ -19,3 +19,8 @@ def cart():
 @main.route('/claim')
 def claim():
     return render_template('claim.html')
+
+
+@main.route('/update')
+def update():
+    return render_template('update.html')
