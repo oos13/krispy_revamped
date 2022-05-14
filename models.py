@@ -27,7 +27,7 @@ class Account(db.Model):
     warnings = db.Column(db.Integer, default=0, nullable=False)
 
 class Employee(UserMixin, db.Model):
-    emp_id = db.Column(db.Integer, primary_key=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
     position = db.Column(db.String(20), nullable=False)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -64,7 +64,7 @@ class Order(db.Model):
 class Deliveries(db.Model):
     delivery_no = db.Column(db.Integer, primary_key=True, nullable=False)
     order_id = db.Column(db.Integer, db.ForeignKey(Order.order_id), unique=True)
-    delivery_person = db.Column(db.Integer, db.ForeignKey(Employee.emp_id), nullable=True )
+    delivery_person = db.Column(db.Integer, db.ForeignKey(Employee.id), nullable=True )
     delivery_rating = db.Column(db.Integer, default=3)
     bid = db.Column(db.Integer)
 

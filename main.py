@@ -24,3 +24,9 @@ def claim():
 @main.route('/update')
 def update():
     return render_template('update.html')
+
+
+@main.route('/employee_profile')
+def employee_profile():
+    return render_template('employee_profile.html')
+
