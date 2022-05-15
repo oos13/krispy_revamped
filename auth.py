@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import Employee, User
-from flask_login import login_user
+from flask_login import login_required, login_user, logout_user
 
 auth = Blueprint('auth', __name__)
 
@@ -64,10 +64,6 @@ def signup_post():
 
     return redirect(url_for('auth.login'))
 
-@auth.route('/logout')
-def logout():
-    return 'Logout'
-
 
 @auth.route('/employee')
 def employee():
@@ -81,7 +77,6 @@ def employee_post():
     password = request.form.get('password')
     position = request.form.get('position')
    
-
 
     employee = Employee.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
 
@@ -125,3 +120,11 @@ def employee_login_post():
     login_user(employee, remember=remember)
     
     return redirect(url_for('main.employee_profile'))
+
+
+@auth.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('auth.login'))
+
