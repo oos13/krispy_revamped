@@ -72,4 +72,19 @@ def update():
 def employee_profile():
     return render_template('employee_profile.html')
 
+@main.route('/manager_profile')
+@login_required
+def manager_profile():
+    return render_template('manager_profile.html')
+
+@main.route('/pickup')
+@login_required
+def pickup():
+    return render_template('pickup.html')
+
+@main.route('/delivery')
+@login_required
+def delivery():
+    return render_template('delivery.html')
+
 

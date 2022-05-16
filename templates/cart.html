@@ -14,6 +14,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Krispy King</title>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- <link rel="icon" type="image/x-icon" href="/static/favicon.png"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <!-- materialize css -->
@@ -124,7 +126,7 @@
                     <span class="shop-item-title">French Fries</span>
                     <img class="shop-item-image" src="/static/img/fries.png">
                     <div class="shop-item-details">
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="shop-item-price">$6.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -187,6 +189,63 @@
             </div>
         </section>
 
+
+        <section class="container content-section">
+            <h2 class="section-header">Drinks</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Coke</span>
+                    <img class="shop-item-image" src="/static/img/coke.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Sprite</span>
+                    <img class="shop-item-image" src="/static/img/sprite.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Fanta</span>
+                    <img class="shop-item-image" src="/static/img/fanta.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">MTN Dew</span>
+                    <img class="shop-item-image" src="/static/img/dew.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Dr. Pepper</span>
+                    <img class="shop-item-image" src="/static/img/drpepper.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Pepsi</span>
+                    <img class="shop-item-image" src="/static/img/pepsi.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$1.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </section>
+
         
         <section class="container content-section">
             <h2 class="section-header" id="cart">CART</h2>
@@ -201,14 +260,19 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button" href="review.html">PURCHASE</button>
+            <center>
+            <a href="{{ url_for('main.pickup') }}" class="w3-btn w3-black">Pick up</a>
+            <br>
+            <br>
+            <a href="{{ url_for('main.delivery') }}" class="w3-btn w3-black">Delivery</a>
+            </center>
+
+            <button class="btn btn-primary btn-purchase" type="button" href="{{ url_for('main.pickup') }}">Pick up</button>
+            <button class="btn btn-primary btn-purchase" type="button" href="{{ url_for('main.delivery') }}">Delivery</button>
         </section>
        
 
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class="footer-text">KRISPY KING</h3>
-                <ul class="nav footer-nav">
+
     </body>
 </html>
 {% endblock %}

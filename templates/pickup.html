@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,40 +62,16 @@
             <div class="hero-body" style="background-image: url(../static/img/background.png);">
                 <div class="container">
         
-                    <ul id="slide-out" class="sidenav">
-                        <li><div class="user-view">
-                          <div class="background">
-                            <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v546batch3-mynt-31-badgewatercolor_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=e1ee6e84fa2c584170bab2733ea5a1b0">
-                          </div>
-                          <a href="#user"><img class="circle" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"></a>
-                          <a href="#name"><span class="black-text name">{{current_user.name}}</span></a>
-                          <a href="#email"><span class="black-text email">{{current_user.email}}</span></a>
-                        </div></li>
-                        <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
-                         
-                        <li><a >Account balance:    {{balance}} </a> </li>
-                        <li><a href="{{ url_for('main.update') }}">Update Profile</a></li>
-
-                        <li><div class="divider"></div></li>
-
-                        <li><a class="black-text subheader">Top 3 Dishes</a></li>
-                        <li><a class="subheader">{{item1}}</a></li>
-                        <li><a class="subheader">{{item2}}</a></li>
-                        <li><a class="subheader">{{item3}}</a></li>
-
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="{{ url_for('main.claim') }}">Submit a claim</a></li>
-                      </ul>
+                   
 
 
 
 
                     <center>
-                      <h1 style="color: black">Welcome {{current_user.name}}</h1>
-                      <br>
-
-                      <h6><a href="#" data-target="slide-out" class="sidenav-trigger blue-text">View Your Profile</a> </h6>
-                      
+                      <h1 style="color: black">Thank you for you purchase {{current_user.name}}</h1>
+                  
+                      <h3> Your order number is: 1234567</h3>
+                        <h3> Your order will be ready for pickup in about 15 minutes</h3>
                       
                     </center>   
 
