@@ -53,7 +53,7 @@ class Menu(db.Model):
 
 class Order(db.Model):
     order_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    item = db.Column(db.String(64), nullable=False) #should this and price be foreign keys? (ie. db.ForeignKey('Menu.item'))
+    item = db.Column(db.String(500), nullable=False) #should this and price be foreign keys? (ie. db.ForeignKey('Menu.item'))
     price = db.Column(db.Float, nullable=False)
     customer_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
     date = db.Column(db.DateTime)
@@ -66,10 +66,9 @@ class Deliveries(db.Model):
     order_id = db.Column(db.Integer, db.ForeignKey(Order.order_id), unique=True)
     delivery_person = db.Column(db.Integer, db.ForeignKey(Employee.id), nullable=True )
     delivery_rating = db.Column(db.Integer, default=3)
-    bid = db.Column(db.Integer)
+    fee = db.Column(db.Integer)
 
 
     
     
     
-

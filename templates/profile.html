@@ -24,9 +24,9 @@
 
 
 
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight" style="background-image: url(../img/background.png)">
 
-            <div class="hero-head">
+            <div class="hero-head" >
                 <nav class="navbar">
                     <div class="container">
                         <div id="navbarMenuHeroA" class="navbar-menu">
@@ -66,20 +66,20 @@
                             <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v546batch3-mynt-31-badgewatercolor_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=e1ee6e84fa2c584170bab2733ea5a1b0">
                           </div>
                           <a href="#user"><img class="circle" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"></a>
-                          <a href="#name"><span class="black-text name">John Doe</span></a>
-                          <a href="#email"><span class="black-text email">jdandturk@gmail.com</span></a>
+                          <a href="#name"><span class="black-text name">{{current_user.name}}</span></a>
+                          <a href="#email"><span class="black-text email">{{current_user.email}}</span></a>
                         </div></li>
                         <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
                          
-                        <li><a >Account balance:    $50 </a> </li>
+                        <li><a >Account balance:    {{balance}} </a> </li>
                         <li><a href="{{ url_for('main.update') }}">Update Profile</a></li>
 
                         <li><div class="divider"></div></li>
 
                         <li><a class="black-text subheader">Top 3 Dishes</a></li>
-                        <li><a class="subheader">Cheeseburger</a></li>
-                        <li><a class="subheader">Mac & Cheese</a></li>
-                        <li><a class="subheader">Chili</a></li>
+                        <li><a class="subheader">{{item1}}</a></li>
+                        <li><a class="subheader">{{item2}}</a></li>
+                        <li><a class="subheader">{{item3}}</a></li>
 
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="{{ url_for('main.claim') }}">Submit a claim</a></li>
@@ -89,7 +89,7 @@
 
 
                     <center>
-                      <h1>Welcome User!</h1>
+                      <h1>Welcome {{current_user.name}}</h1>
                       <br>
 
                       <h6><a href="#" data-target="slide-out" class="sidenav-trigger blue-text">View Your Profile</a> </h6>
@@ -119,4 +119,3 @@
 
 
     </html>
-

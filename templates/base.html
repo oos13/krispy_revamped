@@ -50,7 +50,7 @@
                             <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                 Logout
                             </a>
-                            <a class="navbar-item" href="#cart" ><i class="material-icons">shopping_cart</i>     
+                            <a href="{{ url_for('main.cart') }}" class="navbar-item" class="material-icons">Cart</i>     
                             </a>
                         </div>
                     </div>
@@ -58,8 +58,7 @@
             </nav>
         </div>
 
-        <div class="hero-body" style="background-image: url(../img/background.png);">
-            <div class="container">
+        <div class="hero-body" style="background-image: url(../img/background.png);"></div>
                {% block content %}
                {% endblock %}
             </div>
