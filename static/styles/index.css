@@ -1,0 +1,26 @@
+.heading {
+    text-align: center;
+    margin: 0;
+    font-size: 3rem !important;
+    font-weight: normal;
+    color: black;
+
+}
+
+.title  {
+    color: rgb(37, 36, 36);
+    border: 5px #555555 !important;
+    outline:#555555 solid 2px;
+}
+
+.navbar-item {
+    color: black
+}
+
+.hero-is-fullheight {
+    background-image: url(../img/background.png);
+}
+
+.active {
+    color: black;
+}

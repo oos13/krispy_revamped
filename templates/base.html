@@ -11,7 +11,7 @@
 <!-- materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename = 'styles/base.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
@@ -23,34 +23,37 @@
 </head>
 
 <body   >
-    <section class="hero  is-fullheight ">
+    <section class="hero-is-fullheight ">
 
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item" >
                                 Home
                             </a>
+                            <a href="{{ url_for('main.profile') }}" class="navbar-item" >
+                                Profile
+                            </a>
                            
-                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item" >
                                 Login
                             </a>
-                            <a href="{{ url_for('auth.employee') }}" class="navbar-item">
+                            <a href="{{ url_for('auth.employee') }}" class="navbar-item" >
                                 Employee Signup
                             </a>
 
-                            <a href="{{ url_for('auth.employee_login') }}" class="navbar-item">
+                            <a href="{{ url_for('auth.employee_login') }}" class="navbar-item" >
                                 Employee Login
                             </a>
-                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item" >
                                 Sign Up
                             </a>
-                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item" >
                                 Logout
                             </a>
-                            <a href="{{ url_for('main.cart') }}" class="navbar-item" class="material-icons">Cart</i>     
+                            <a href="{{ url_for('main.cart') }}" class="navbar-item"><i class="material-icons" >shopping_cart</i>     
                             </a>
                         </div>
                     </div>

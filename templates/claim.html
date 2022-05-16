@@ -64,26 +64,27 @@
 
                                 
                                 <form>
-                                    <label >Name:</label><br>
-                                    <input type="text" name="name" value="User's Name" disabled><br>
-                                    <label >Email:</label><br>
-                                    <input type="email" name="email" value="User's Eamil" disabled><br> 
+                                    <label style="color: #565656">Name:</label><br>
+                                    <input type="text" name="name" value="{{current_user.name}}" disabled style="color: black"><br>
+                                    <label style="color: #565656">Email:</label><br>
+                                    <input type="email" name="email" value="{{current_user.email}}" disabled style="color: black"><br> 
             
-                                    <label >Date:</label>
+                                    <label style="color: #565656">Date:</label>
                                     <input type="date"  >
 
                                     
 
-                                    <label>What is your claim about?</label>
+                                    <label style="color: #565656">What is your claim about?</label>
                                     <select class="browser-default">
                                         <option value="" disabled selected>Choose your option</option>
                                         <option value="1">Wrong Order</option>
                                         <option value="2">Delivery Issue</option>
-                                        <option value="3">Others</option>
+                                        <option value="3">Missing Items</option>
+                                        <option value="4">Others</option>
                                     </select>
                                                                         
 
-                                    <label for="subject">Explain in details <span class="required">*</span></label>
+                                    <label for="subject" style="color: #565656">Explain in details <span class="required">*</span></label>
                                     <textarea name="subject" placeholder="Write something..." style="height:200px; color: black;"></textarea>
 
                                     <input type="submit" value="Submit">
