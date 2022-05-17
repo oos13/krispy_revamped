@@ -69,7 +69,7 @@ class Deliveries(db.Model):
     delivery_rating = db.Column(db.Integer, default=3)
     fee = db.Column(db.Integer)
 
-class Claims(db.Model):
+class Claim(db.Model):
     id = db.Column(db.Integer, primary_key=True, unique=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), db.ForeignKey(User.email), nullable=False)

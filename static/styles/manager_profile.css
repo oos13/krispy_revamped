@@ -13,6 +13,7 @@ h6.small-heading{
     margin-bottom: 40px;
  }
 
+ 
 .nav-link{
     margin-left: 20px;
     font-size: 1.2rem;
@@ -28,4 +29,7 @@ h6.small-heading{
   
   .checked {
     color: orange;
+  }
+  .hero-body {
+    background-image: url(../img/background.png);
   }

@@ -2,9 +2,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, current_app, flash
 from flask_login import login_required, current_user, logout_user
 from . import db
-from .models import Employee, User, Account, Menu, Order
+from .models import Employee, User, Account, Menu, Order, Claim
 from sqlalchemy import func
-from datetime import datetime
+from datetime import datetime, date
 
 
 
@@ -30,15 +30,16 @@ def purchase():
     order_items = ""
     price = 0
     order_date = datetime.now()
-    try:
-        for things in items:
-            quantity = request.form.get(things.item)
-            for i in range(int(quantity)):
-                order_items = order_items + things.item + ","
-                price = price + things.price
-    except:
-        flash("please enter a quantity for the menu items you would like to order")
-        return redirect(url_for('.index'))
+    
+    for things in items:
+        current_app.logger.info(things.item)
+
+        quantity = request.form.get(things.item)
+        current_app.logger.info(quantity)
+        for i in range(int(quantity)):
+            order_items = order_items + things.item + ","
+            price = price + things.price
+    
 
     #apply discount if VIP
     if user_account.vip_status is True:
@@ -109,8 +110,20 @@ def cart():
 @main.route('/claim')
 @login_required
 def claim():
-    return render_template('claim.html')
+    claim_date = date.today()
+    return render_template('claim.html', claim_date=claim_date)
 
+@main.route('/claim', methods=['POST'])
+def submit_claim():
+    name = current_user.name
+    email = current_user.email
+    issue = request.form.get('issue')
+    subject = request.form.get('subject')
+
+    new_claim = Claim(name=name, email=email, category=issue, comment=subject)
+    db.session.add(new_claim)
+    db.session.commit()
+    return redirect(url_for('main.profile'))
 
 @main.route('/update')
 @login_required
@@ -151,4 +164,37 @@ def compliment():
     return render_template('compliment.html')
 
 
+@main.route('/edit_menu')
+def edit_menu():
+    return render_template('edit_menu.html')
 
+@main.route('/edit_menu', methods=['POST'])
+def change_menu():
+    item = request.form.get('dish')
+    Menu.query.filter_by(Menu.item == item).delete()
+    db.session.commit()
+
+@main.route('/add_menu')
+def add_menu():
+    return render_template('add_menu.html')
+
+@main.route('/add_menu', methods=['POST'])
+@login_required
+def add_to_menu():
+    name = request.form.get('item')
+    type = request.form.get('item_type')
+    price = request.form.get('price')
+    price = float(price)
+    chef = request.form.get('chef')
+    is_special = request.form.get('special')
+    if is_special == "True":
+        is_special = True
+    else:
+        is_special = False
+    
+
+    new_item = Menu(item=name, item_type=type, price=price, special=is_special, chef_made=chef)
+    db.session.add(new_item)
+    db.session.commit()
+
+    return redirect(url_for('main.employee_profile'))

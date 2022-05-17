@@ -66,30 +66,23 @@
                                     </div>
 
                                 
-                                <form>
+                                <form method="POST" action="/claim">
                                     <label id="label">Name:</label><br>
                                     <input type="text" name="name" value="{{current_user.name}}" disabled style="color: black"><br>
                                     <label id="label">Email:</label><br>
                                     <input type="email" name="email" value="{{current_user.email}}" disabled style="color: black"><br> 
             
                                     <label id="label">Date:</label>
-                                    <input type="date"  >
+                                    <input type="date" name="date" value="{{claim_date}}" >
 
                                     
 
                                     <label id="label">What is your complaint about?</label>
-                                    <select class="browser-default">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Wrong Order</option>
-                                        <option value="2">Delivery Issue</option>
-                                        <option value="3">Missing Items</option>
-                                        <option value="4">Others</option>
-                                    </select>
-                                                                        
+                                    <input type="text" id="issue" name="issue">                     
 
                                     <label for="subject" id="label">Explain in details <span class="required">*</span></label>
-                                    <textarea name="subject" placeholder="Write something..." style="height:200px; background-color: white;"></textarea>
-
+                                    <input type="text" id="subject" name="subject">
+                                    
                                     <input type="submit" value="Submit">
                                   
                                   </form>
