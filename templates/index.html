@@ -1,8 +1,5 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -13,204 +10,21 @@
 {% endwith %}
 
 <link href="../static/styles/index.css" rel="stylesheet">
-
 <div class="column is-4 is-offset-4" >
     <h1 class="heading">WELCOME TO KRISPY KING</h1>
     
-    <form method="POST" action="/" >
+    <form method="POST" action="/"></form>
         <div id="mainframe">
-            <center> <h3 class="title">MAIN</h3></center>   
-            <div id="mains">
-
-                <!-- card 1-->
-            
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/hamburger.png" width="100" 
-                        height="50" >
-                        <label for="Hamburger">Hamburger</label><br>
-                        <input type="number" id="hamburger" name="hamburger" value="0"><br>
-                    </div>
+            {% for menu_item in items %}
+                <div id="menu_item">
+                    <img class="item-image" src="/static/img/{{menu_item.image}}.png" width="100" height="50">
+                    <p>{{ menu_item.item }} {{menu_item.price}}</p>
+                    <input type="number" id={{menu_item.item}} value="0"><br>
                 </div>
-
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/crispy.png" width="100" 
-                        height="50" >
-                        <label for="Crispy Chicken Sandwich">Crispy Chicken Sandwich</label><br>
-                        <input type="number" id="crispy chicken sandwich" name="crispy chicken sandwich" value="0"><br>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/pizza.png" width="100" 
-                        height="50" >
-                        <label for="pizza">pizza</label><br>
-                        <input type="number" id="pizza" name="pizza" value="0"><br>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/fish.png" width="100" 
-                        height="50" >
-                        <label for="Fish burger">Fish burger</label><br>
-                        <input type="number" id="fish burger" name="fish burger" value="0"><br>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/wings.png" width="100" 
-                        height="50" >
-                        <label for="Buffalo Wings">Buffalo Wings</label><br>
-                        <input type="number" id="buffalo wings" name="buffalo wings" value="0"><br>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/macnchesse.png" width="100" 
-                        height="50" >
-                        <label for="Mac n Cheese">Mac n Cheese</label><br>
-                        <input type="number" id="Mac n Cheese" name="Mac n Cheese" value="0"><br>
-                    </div>
-                </div>
-                  
-            </div>
-
-            <center> <h3 class="title">SIDES</h3></center>
-            <div id="side">
-
-                <!-- card 1-->
-                <div class="col 4">
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/fries.png" width="100" 
-                            height="50" >
-                            <label for="French Fries">French Fries</label><br>
-                            <input type="number" id="French Fries" name="French Fries" value="0"><br>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/cheese.png" width="100" 
-                            height="50" >
-                            <label for="Cheese Fries">Cheese Fries</label><br>
-                            <input type="number" id="Cheese Fries" name="Cheese Fries" value="0"><br>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/garlic.png" width="100" 
-                            height="50" >
-                            <label for="Garlic Bread">Garlic Bread</label><br>
-                            <input type="number" id="Garlic Bread" name="Garlic Bread" value="0"><br>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/coleslaw.png" width="100" 
-                            height="50" >
-                            <label for="Coleslaw">Coleslaw</label><br>
-                            <input type="number" id="Coleslaw" name="Coleslaw" value="0"><br>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/sticks.png" width="100" 
-                            height="50" >
-                            <label for="Mozzarella Sticks">Mozzarella Sticks</label><br>
-                            <input type="number" id="Mozzarella Sticks" name="Mozzarella Sticks" value="0"><br>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/veggies.png" width="100" 
-                            height="50" >
-                            <label for="Roasted Vegetables">Roasted Vegetables</label><br>
-                            <input type="number" id="Roasted Vegetables" name="Roasted Vegetables" value="0"><br>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/biscuits.png" width="100" 
-                            height="50" >
-                            <label for="Biscuits">Biscuits</label><br>
-                            <input type="number" id="Biscuits" name="Biscuits" value="0"><br>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <img class="shop-item-image" src="/static/img/salad.png" width="100" 
-                            height="50" >
-                            <label for="Caesar Salad">Caesar Salad</label><br>
-                            <input type="number" id="Caesar Salad" name="Caesar Salad" value="0"><br>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-
-            <center> <h3 class="title">DRINKS</h3></center>
-            <div id="side">
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/pepsi.png" width="100" 
-                        height="50" >
-                        <label for="Pepsi">Pepsi</label><br>
-                        <input type="number" id="Pepsi" name="Pepsi" value="0"><br>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/sprite.png" width="100" 
-                        height="50" >
-                        <label for="Sprite">Sprite</label><br>
-                        <input type="number" id="Sprite" name="Sprite" value="0"><br>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/coke.png" width="100" 
-                        height="50" >
-                        <label for="Coca-Cola">Coca-Cola</label><br>
-                        <input type="number" id="Coca-Cola" name="Coca-Cola" value="0"><br>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/drpepper.png" width="100" 
-                        height="50" >
-                        <label for="Dr Pepper">Dr Pepper</label><br>
-                        <input type="number" id="Dr Pepper" name="Dr Pepper" value="0"><br>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/fanta.png" width="100" 
-                        height="50" >
-                        <label for="Fanta Orange">Fanta Orange</label><br>
-                        <input type="number" id="Fanta Orange" name="Fanta Orange" value="0"><br>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <img class="shop-item-image" src="/static/img/dew.png" width="100" 
-                        height="50" >
-                        <label for="Mountain Dew">Mountain Dew</label><br>
-                        <input type="number" id="Mountain Dew" name="Mountain Dew" value="0"><br>
-                    </div>
-                </div>
-        </div>      
+            {% endfor %}
+        </div>    
         <button class="button is-block is-info is-large is-fullwidth">Purchase</button>
+   
     </form>
-    
 </div>
-
 {% endblock %}

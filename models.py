@@ -50,6 +50,7 @@ class Menu(db.Model):
     special_item = db.Column(db.Boolean, default=False, nullable=False)
     times_ordered = db.Column(db.Integer, default = 0, nullable=False)
     chef_made = db.Column(db.String(64))
+    image = db.Column(db.String(64))
 
 class Order(db.Model):
     order_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)

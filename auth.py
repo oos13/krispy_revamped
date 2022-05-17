@@ -1,5 +1,5 @@
 from tabnanny import check
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import Employee, User, Account
@@ -9,6 +9,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
+    session['account_type'] = 'User'
     return render_template('login.html')
 
 @auth.route('/login', methods=['POST'])
@@ -27,7 +28,7 @@ def login_post():
         flash('Please check your login details and try again.')
         return redirect(url_for('auth.login'))
     #if we get here we know user entered correct credentials
-
+    session['account_type'] = 'User'
     login_user(user, remember=remember)
     
     return redirect(url_for('main.profile'))
@@ -98,12 +99,14 @@ def employee_post():
 
 @auth.route('/employee_login')
 def employee_login():
+    session['account_type'] = 'Employee'
     return render_template('employee_login.html')
 
 @auth.route('/employee_login', methods=['POST'])
 def employee_login_post():
     #login code
     #pull info from form
+    
     email = request.form.get('email')
     password = request.form.get('password')
     remember = True if request.form.get('remember') else False
@@ -116,7 +119,7 @@ def employee_login_post():
         flash('Please check your login details and try again.')
         return redirect(url_for('auth.employee_login'))
     #if we get here we know user entered correct credentials
-
+    session['account_type'] = 'Employee'
     login_user(employee, remember=remember)
     
     return redirect(url_for('main.employee_profile'))

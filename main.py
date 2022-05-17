@@ -8,7 +8,8 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    items = Menu.query.filter(Menu.special_item == False)
+    return render_template('index.html', items=items)
 
 @main.route('/', methods=['POST','PUT'])
 @login_required
@@ -30,7 +31,7 @@ def purchase():
     # caesar = request.form.get('Hamburger')
     if int(hamburger) > 0:
         menu_item = db.session.query(Menu).filter_by(item='Hamburger').first()
-        menu_item.times_ordered = menu_item.times_ordered + 1
+        menu_item.times_ordered = menu_item.times_ordered + int(hamburger)
         db.session.commit()
             
 
@@ -87,4 +88,9 @@ def pickup():
 def delivery():
     return render_template('delivery.html')
 
+@main.route('/menu')
+def menu():
+    items = Menu.query.filter(Menu.special_item == False)
+
+    return render_template('menu.html', items=items)
 
