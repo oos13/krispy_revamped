@@ -60,34 +60,29 @@
                                 <div class="row">
                                     <div class="col s12">
                                       <ul class="tabs" id="tab">
-                                        <li class="tab col l6"><a id="complaint" href="{{ url_for('main.claim') }}">Complaint</a></li>
+                                        <li class="tab col l6"><a id="complain" href="{{ url_for('main.claim') }}">Complaint</a></li>
                                         <li class="tab col l6"><a id="compliment" href="{{ url_for('main.compliment') }}">Compliment</a></li>
                                       </ul>
                                     </div>
 
                                 
-                                <form>
+                                <form method="POST" action="/compliment">
                                     <label id="label">Name:</label><br>
                                     <input type="text" name="name" value="{{current_user.name}}" disabled style="color: black"><br>
                                     <label id="label">Email:</label><br>
                                     <input type="email" name="email" value="{{current_user.email}}" disabled style="color: black"><br> 
             
                                     <label id="label">Date:</label>
-                                    <input type="date"  >
+                                    <input type="date" name="date" value="{{claim_date}}" >
 
                                     
 
-                                    <label id="label">Compliment</label>
-                                    <select class="browser-default">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">Chef</option>
-                                        <option value="2">Delivery Person</option>
-                                    </select>
-                                                                        
+                                    <label id="label">Category:</label><br>
+                                    <input type="category" name="category" value="Compliment" disabled style="color: black"><br>                   
 
-                                    <label for="subject" id="label">Explain in details <span class="required">*</span></label>
-                                    <textarea name="subject" placeholder="Write something..." style="height:200px; background-color: white;"></textarea>
-
+                                    <label for="subject" id="label">Explain your compliment in details <span class="required">*</span></label>
+                                    <input type="text" id="subject" name="subject">
+                                    
                                     <input type="submit" value="Submit">
                                   
                                   </form>
@@ -120,3 +115,4 @@
 
 
     </html>
+        
