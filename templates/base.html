@@ -48,19 +48,10 @@
                                 <li><a href="{{ url_for('auth.login') }}" class="black-text">User</a></li>
                                 <li><a href="{{ url_for('auth.employee_login') }}" class="black-text">Employee</a></li>
                                 <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!" class="black-text">Manager</a></li>
+                                <li><a href="{{ url_for('auth.manager_login') }}" class="black-text">Manager</a></li>
+                                
                               </ul>
 
-                            <!-- <a href="{{ url_for('auth.login') }}" class="navbar-item" >
-                                Login
-                            </a> -->
-                            <!-- <a href="{{ url_for('auth.employee') }}" class="navbar-item" >
-                                Employee Signup
-                            </a> -->
-
-                            <!-- <a href="{{ url_for('auth.employee_login') }}" class="navbar-item" >
-                                Employee Login
-                            </a> -->
 
                             <a class="dropdown-trigger navbar-item" href="#!" data-target="dropdown2">Register<i class="material-icons right">arrow_drop_down</i></a>
 

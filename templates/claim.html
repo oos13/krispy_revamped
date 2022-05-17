@@ -52,25 +52,32 @@
                 </nav>
             </div>
 
-            <div class="hero-body" style="background-color: #c1d7de;">
+            <div class="hero-body">
                 <div class="container">
                     <div class="row">
                         <div class="col l6 offset-l3"><span class="flow-text">
                             <div >
+                                <div class="row">
+                                    <div class="col s12">
+                                      <ul class="tabs" id="tab">
+                                        <li class="tab col l6"><a id="complain" href="{{ url_for('main.claim') }}">Complaint</a></li>
+                                        <li class="tab col l6"><a id="compliment" href="{{ url_for('main.compliment') }}">Compliment</a></li>
+                                      </ul>
+                                    </div>
 
                                 
                                 <form>
-                                    <label style="color: #565656">Name:</label><br>
+                                    <label id="label">Name:</label><br>
                                     <input type="text" name="name" value="{{current_user.name}}" disabled style="color: black"><br>
-                                    <label style="color: #565656">Email:</label><br>
+                                    <label id="label">Email:</label><br>
                                     <input type="email" name="email" value="{{current_user.email}}" disabled style="color: black"><br> 
             
-                                    <label style="color: #565656">Date:</label>
+                                    <label id="label">Date:</label>
                                     <input type="date"  >
 
                                     
 
-                                    <label style="color: #565656">What is your claim about?</label>
+                                    <label id="label">What is your complaint about?</label>
                                     <select class="browser-default">
                                         <option value="" disabled selected>Choose your option</option>
                                         <option value="1">Wrong Order</option>
@@ -80,8 +87,8 @@
                                     </select>
                                                                         
 
-                                    <label for="subject" style="color: #565656">Explain in details <span class="required">*</span></label>
-                                    <textarea name="subject" placeholder="Write something..." style="height:200px; color: black;"></textarea>
+                                    <label for="subject" id="label">Explain in details <span class="required">*</span></label>
+                                    <textarea name="subject" placeholder="Write something..." style="height:200px; background-color: white;"></textarea>
 
                                     <input type="submit" value="Submit">
                                   

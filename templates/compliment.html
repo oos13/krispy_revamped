@@ -52,29 +52,45 @@
                 </nav>
             </div>
 
-                        
-              
-
-
-            <div class="hero-body" style="background-color: #c1d7de;">
+            <div class="hero-body">
                 <div class="container">
                     <div class="row">
                         <div class="col l6 offset-l3"><span class="flow-text">
                             <div >
+                                <div class="row">
+                                    <div class="col s12">
+                                      <ul class="tabs" id="tab">
+                                        <li class="tab col l6"><a id="complain" href="{{ url_for('main.claim') }}">Complain</a></li>
+                                        <li class="tab col l6"><a id="compliment" href="{{ url_for('main.compliment') }}">Compliment</a></li>
+                                      </ul>
+                                    </div>
 
                                 
-                                <form action="/">
-                                    <label style="color: #565656">Name:</label><br>
-                                    <input type="text" name="name" value="{{current_user.name}}"  style="color: black"><br>
-                                    <label style="color: #565656">Email:</label><br>
-                                    <input type="email" name="email" value="{{current_user.email}}"  style="color: black"><br>
-                                    <label style="color: #565656">Address:</label><br>
-                                    <input type="email" name="email" value="{{current_user.address}}"  style="color: black"><br> 
-                                    <label style="color: #565656">Credit Card Number:</label><br>
-                                    <input type="email" name="email" value="{{current_user.cc_info}}"  style="color: black"><br> 
+                                <form>
+                                    <label id="label">Name:</label><br>
+                                    <input type="text" name="name" value="{{current_user.name}}" disabled style="color: black"><br>
+                                    <label id="label">Email:</label><br>
+                                    <input type="email" name="email" value="{{current_user.email}}" disabled style="color: black"><br> 
             
-                                    <input type="submit" value="Update">
-                                </form> 
+                                    <label id="label">Date:</label>
+                                    <input type="date"  >
+
+                                    
+
+                                    <label id="label">Compliment</label>
+                                    <select class="browser-default">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="1">Chef</option>
+                                        <option value="2">Delivery Person</option>
+                                    </select>
+                                                                        
+
+                                    <label for="subject" id="label">Explain in details <span class="required">*</span></label>
+                                    <textarea name="subject" placeholder="Write something..." style="height:200px; background-color: white;"></textarea>
+
+                                    <input type="submit" value="Submit">
+                                  
+                                  </form>
 
                             </div>
 
@@ -99,9 +115,8 @@
              <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+      
     </body>
 
 
     </html>
-        

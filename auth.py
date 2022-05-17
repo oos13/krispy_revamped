@@ -2,7 +2,7 @@ from tabnanny import check
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
-from .models import Employee, User, Account
+from .models import Employee, User, Account, Manager
 from flask_login import login_required, login_user, logout_user
 
 auth = Blueprint('auth', __name__)
@@ -24,7 +24,7 @@ def login_post():
     user = User.query.filter_by(email=email).first()
     # employee = Employee.query.filter_by(email=email).first()
     #check if user exists, if not print login error message and redirect to login
-    if not user or not check_password_hash(user.password, password) : 
+    if not user or not check_password_hash(user.password, password) or user.blacklisted == True : 
         flash('Please check your login details and try again.')
         return redirect(url_for('auth.login'))
     #if we get here we know user entered correct credentials
@@ -77,6 +77,8 @@ def employee_post():
     name = request.form.get('name')
     password = request.form.get('password')
     position = request.form.get('position')
+
+    jobLists = ['Chef', 'chef', 'Delivery Person', 'delivery person']
    
 
     employee = Employee.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
@@ -84,6 +86,11 @@ def employee_post():
     if employee: # if a user is found, we want to redirect back to signup page so user can try again
         flash('email adress already exists')
         return redirect(url_for('auth.employee'))
+
+    for item in position:
+        if position not in jobLists:
+            flash("Error in job position.")
+            return redirect(url_for('auth.employee'))
 
     # create a new user with the form data. Hash the password so the plaintext version isn't saved.
     new_employee = Employee(email=email, name=name, position=position, password=generate_password_hash(password, method='sha256'))
@@ -95,6 +102,7 @@ def employee_post():
     db.session.commit()
 
     return redirect(url_for('auth.employee_login'))
+
 
 
 @auth.route('/employee_login')
@@ -123,6 +131,31 @@ def employee_login_post():
     login_user(employee, remember=remember)
     
     return redirect(url_for('main.employee_profile'))
+
+
+@auth.route('/manager_login')
+def manager_login():
+    return render_template('manager_login.html')
+
+@auth.route('/manager_login', methods=['POST'])
+def manager_login_post():
+    #login code
+    #pull info from form
+    
+    email = request.form.get('email')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
+
+    #query database, find user by email if exists save to variable 'user'
+    manager = Manager.query.filter_by(email=email).first()
+
+    #check if user exists, if not print login error message and redirect to login
+    if not manager or not check_password_hash(manager.password, password): 
+        flash('Please check your login details and try again.')
+        return redirect(url_for('auth.manager_login'))
+    login_user(manager, remember=remember)
+    
+    return redirect(url_for('main.manager_profile'))
 
 
 @auth.route("/logout")

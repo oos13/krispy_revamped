@@ -1,7 +1,7 @@
 .heading {
     text-align: center;
     margin: 0;
-    font-size: 3rem !important;
+    font-size: 3.9rem !important;
     font-weight: normal;
     color: black;
 
@@ -11,6 +11,12 @@
     color: rgb(37, 36, 36);
     border: 5px #555555 !important;
     outline:#555555 solid 2px;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    margin-top: 2em;
 }
 
 .navbar-item {
@@ -24,3 +30,192 @@
 .active {
     color: black;
 }
+
+.item-image {
+    display: block;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    height: 150px !important;
+    width: 125px !important;
+    margin-top: 4em;
+     
+}
+
+/*#text {
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+    position: center;
+}*/
+
+.text {
+    color: black;
+    text-align: center;
+}
+
+#menu_item {
+    text-align: center;
+    font-size: 100%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+h4 {
+    color: black;
+    text-align: center;
+    font-size: 120%;
+}
+/*
+#Fish {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Crispy {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Pizza {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Mac {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Buffalo {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Fries {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Cheese {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Coleslaw {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Garlic {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Biscuits {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Roasted {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    border-color: black;
+    font-weight: 400;
+}
+
+#Mozzarella {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Caesar {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Coke {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Sprite {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Pepsi {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Mountain {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Dr {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+
+#Fanta {
+    text-align: center;
+    font-size: 150%;
+    color: black;
+    font-weight: 400;
+    border-color: black;
+}
+*/

@@ -38,7 +38,7 @@ class Employee(UserMixin, db.Model):
     demotion = db.Column(db.Integer, default=0)#negative
 
 class Manager(UserMixin, db.Model):
-    manager_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
@@ -68,6 +68,13 @@ class Deliveries(db.Model):
     delivery_person = db.Column(db.Integer, db.ForeignKey(Employee.id), nullable=True )
     delivery_rating = db.Column(db.Integer, default=3)
     fee = db.Column(db.Integer)
+
+class Claims(db.Model):
+    id = db.Column(db.Integer, primary_key=True, unique=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), db.ForeignKey(User.email), nullable=False)
+    category = db.Column(db.String(150), nullable=False)
+    comment = db.Column(db.String(250), nullable=False)
 
 
     

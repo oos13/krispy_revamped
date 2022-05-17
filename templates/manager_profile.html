@@ -141,9 +141,10 @@
                 </thead>
                 <tbody>
                     
+                    {% for employee in employees %}
                     <tr>
-                    <td> Ida </td>
-                    <td> Chef </td>
+                    <td> {{employee.name}} </td>
+                    
                     <td > 
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -154,12 +155,14 @@
                     
                     </td>
                     <td>
+                    
                         <div class="row">
                             <a href=" "  class="col-sm-4 btn btn-outline-success">Promote</a>
                         <a href=" " class=" col-sm-4 btn btn-outline-danger red darken-1">Fire</a>
                         </div>
                     </td>
                     </tr>
+                    {% endfor %}
                     
                     
                 </tbody>
@@ -182,14 +185,17 @@
                 <thead>
                     <tr>
                     <th scope="col">Menus</th>
-                
+                        
+                        <td>Price </td>
                         <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
                     
+                    {% for menu_item in menu_items %}
                     <tr>
-                    <td> Mac & cheese </td>
+                    <td> {{menu_item.item}} </td>
+                    <td> {{menu_item.price}}</td>
                     
                     <td>
                         <div class="row">
@@ -198,6 +204,7 @@
                         </div>
                     </td>
                     </tr>
+                    {% endfor %}
                     
                     
                 </tbody>

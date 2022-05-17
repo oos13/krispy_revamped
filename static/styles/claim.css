@@ -1,43 +1,72 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    }
+  font-family: Arial, Helvetica, sans-serif;
+  }
 
-     
-  
+   
+
 input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid rgb(15, 14, 14);
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+width: 100%;
+padding: 12px;
+border: 1px solid rgb(15, 14, 14);
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
 }
 
 input[type=submit] {
-  background-color: #04AA6D;
-  /* color: white; */
-  padding: 12px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+background-color: #04AA6D;
+/* color: white; */
+padding: 12px 12px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+background-color: #45a049;
 }
 
 
 .browser-default{
-    background-color: #c1d7de;
-    border:  1px solid rgb(15, 14, 14);
+  
+  border:  1px solid rgb(15, 14, 14);
 
 }
 
 
 /* .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
 } */
+
+.hero-body {
+background-image: url(../img/background.png);
+}
+
+#label {
+color: black; 
+font-size: large;
+}
+
+#name {
+color: red !important;
+}
+
+::placeholder {
+color: black;
+}
+
+#complain{
+color: black;
+}
+
+#tab {
+background-color: white;
+}
+
+#compliment {
+color: black;
+}
