@@ -62,9 +62,8 @@
                     <div class="row">
                         <div class="col s12">
                           <ul class="tabs">
-                            <li class="tab col l4"><a href="#test1">Claims</a></li>
-                            <li class="tab col l4"><a class="active" href="#test2">Employees</a></li>
-                            <li class="tab col l4"><a href="#test4">Edit Menu</a></li>
+                            <li class="tab col l6"><a href="#test1">Claims</a></li>
+                            <li class="tab col l6"><a class="active" href="#test2">Employees</a></li>
                           </ul>
                         </div>
 
@@ -89,30 +88,23 @@
                         </thead>
                         <tbody>
                             
-                            <tr>
-                            <td> Ida </td>
-                            <td> wrong item </td>
-                            <td > I did not other this </td>
-                            <td>
-                                <div class="row">
-                                    <a href=" "  class="col-sm-4 btn btn-outline-success">Resolve</a>
-                                <a href=" " class=" col-sm-4 btn red darken-1">Deny</a>
-                                </div>
-                            </td>
-                            </tr>
-
-
-                            <tr>
-                                <td> Alan </td>
-                                <td> took too long </td>
-                                <td > took two hours </td>
-                                <td>
-                                    <div class="row">
-                                        <a href=" "  class="col-sm-4 btn btn-outline-success">Resolve</a>
-                                    <a href=" " class=" col-sm-4 btn red darken-1">Deny</a>
-                                    </div>
-                                </td>
-                                </tr>
+                        {% for claim in claims %}
+                    <tr>
+                    <td> {{claim.name}} </td>
+                    <td>
+                        {{claim.category}}
+                    </td>
+                    <td>
+                        {{claim.comment}}
+                    </td>
+                    <td>
+                    
+                        <div class="row">
+                            <a href=" "  class="col-sm-4 btn btn-outline-success">Resolved</a>
+                        </div>
+                    </td>
+                    </tr>
+                    {% endfor %}
                             
                             
                         </tbody>
@@ -176,37 +168,6 @@
                     <!-- edit menu tab  -->
 
                         </div>
-                        <div id="test4" class="col l12 innertabs">
-
-                            <!-- <h6 class="small-heading">Edit Menu</h6>
-                            <span> </span> -->
-
-                            <h6>Edit Menu <button type="button" class="btn  pull-right" data-toggle="modal" data-target="#modal1">Add Menu </button></h6>
-
-                            <table class="table table-striped">
-                <thead>
-                    <tr>
-                    <th scope="col">Menus</th>
-                        
-                        <td>Price </td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    {% for menu_item in menu_items %}
-                    <tr>
-                    <td> {{menu_item.item}} </td>
-                    <td> {{menu_item.price}}</td>
-                    
-                    <td>
-                        <div class="row">
-                        
-                        <a href=" " class=" col-sm-4 btn red darken-1">Delete</a>
-                        </div>
-                    </td>
-                    </tr>
-                    {% endfor %}
                     
                     
                 </tbody>
@@ -220,19 +181,6 @@
                   </div>
               </div>
   
-  
-                <!-- inside the modal -->
-
-              <div id="modal1" class="modal">
-                <div class="modal-content">
-                  <h4>Add food item</h4>
-                  <p>work on this...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href=" " class=" col-sm-4 btn btn-outline-success">Add</a>
-                </div>
-              </div>
-                 
   
           </section>
       
