@@ -1,4 +1,4 @@
-/*
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -109,4 +109,3 @@ function alertLog() {
     alert("You have been logged out!");
     console.log("log out");
 }
-*/
