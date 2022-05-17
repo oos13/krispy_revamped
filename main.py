@@ -117,13 +117,35 @@ def claim():
 def submit_claim():
     name = current_user.name
     email = current_user.email
-    issue = request.form.get('issue')
+    issue = "Complaint"
     subject = request.form.get('subject')
 
     new_claim = Claim(name=name, email=email, category=issue, comment=subject)
     db.session.add(new_claim)
     db.session.commit()
     return redirect(url_for('main.profile'))
+
+
+@main.route('/compliment')
+@login_required
+def compliment():
+    claim_date = date.today()
+    return render_template('compliment.html', claim_date=claim_date)
+
+@main.route('/compliment', methods=['POST'])
+def submit_compliment():
+    name = current_user.name
+    email = current_user.email
+    issue = "Compliment"
+    subject = request.form.get('subject')
+
+    new_claim = Claim(name=name, email=email, category=issue, comment=subject)
+    db.session.add(new_claim)
+    db.session.commit()
+    return redirect(url_for('main.profile'))
+
+
+
 
 @main.route('/update')
 @login_required
@@ -141,7 +163,8 @@ def employee_profile():
 def manager_profile():
     employees = Employee.query.filter().all()
     menu_items = Menu.query.filter().all()
-    return render_template('manager_profile.html', employees=employees, menu_items=menu_items)
+    claims = Claim.query.filter().all()
+    return render_template('manager_profile.html', employees=employees, menu_items=menu_items, claims=claims)
 
 @main.route('/pickup')
 @login_required
@@ -158,10 +181,6 @@ def menu():
     items = Menu.query.filter(Menu.special_item == False)
 
     return render_template('menu.html', items=items)
-
-@main.route('/compliment')
-def compliment():
-    return render_template('compliment.html')
 
 
 @main.route('/edit_menu')
