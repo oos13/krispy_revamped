@@ -163,7 +163,7 @@ def employee_profile():
 def manager_profile():
     employees = Employee.query.filter().all()
     menu_items = Menu.query.filter().all()
-    claims = Claim.query.filter().all()
+    claims = db.session.query(Claim).filter_by (category = "Complaint").all()
     return render_template('manager_profile.html', employees=employees, menu_items=menu_items, claims=claims)
 
 @main.route('/pickup')
